@@ -77,27 +77,27 @@ public class TestStringStrip {
 
     public static void main(String[] args) throws Exception {
 //      StringSource src = new SingleString();
-//        StringSource src = new MultipleStrings(1000000, 0.01);
-        StringSource src = new MultipleStrings(1000000, 1);
+        StringSource src = new MultipleStrings(1000000, 0.01);
+//        StringSource src = new MultipleStrings(1000000, 1);
         StringDestination dst = new SimpleCount();
 
         StripAlgorithm alg[] = new StripAlgorithm[] {
-//                new StringReplaceAll(),
-//                new MatcherReplace(),
-//                new StringBuilderCodePoint(),
-//                new StringBuilderChar(),
-//                new ArrayOfCharFromStringCharAt(),
-//                new ArrayOfCharFromArrayOfChar(),
-//                new RatchetFreak1(),
-//                new RatchetFreak2(),
-//                new ArrayOfByteUTF8String(),
-//                new ArrayOfByteUTF8Const(),
-//                new ArrayOfByteWindows1251(),
-//                new EdStaub1(),
-//                new RatchetFreak2EdStaub1GreyCat1(),
-//                new RatchetFreak2EdStaub1GreyCat2(),
-//                new EdStaub1GreyCat1(),
-                new Voo1(),
+                new StringReplaceAll(),
+                new MatcherReplace(),
+                new StringBuilderCodePoint(),
+                new StringBuilderChar(),
+                new ArrayOfCharFromStringCharAt(),
+                new ArrayOfCharFromArrayOfChar(),
+                new RatchetFreak1(),
+                new RatchetFreak2(),
+                new ArrayOfByteUTF8String(),
+                new ArrayOfByteUTF8Const(),
+                new ArrayOfByteWindows1251(),
+                new EdStaub1(),
+                new RatchetFreak2EdStaub1GreyCat1(),
+                new RatchetFreak2EdStaub1GreyCat2(),
+                new EdStaub1GreyCat1(),
+//                new Voo1(),
         };
 
         assureCorrectness(10000, src, alg);
