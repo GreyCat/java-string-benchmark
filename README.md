@@ -46,24 +46,30 @@ does simplest and fastest non-trivial string content analysis
 operation which won't be optimized out. More complex examples could
 include writing a string to local file or sending it over the network.
 
+Running the benchmark
+---------------------
+
 Given this structure, basically, testing consists of:
 
 * Create one or more of objects to test (StringSource, StripAlgorithm,
 StringDestination), for example:
 
-    StringSource src = new SingleString();
-    StringDestination dst = new SimpleCount();
-    StripAlgorithm alg[] = new StripAlgorithm[] {
-            new StringReplaceAll(),
-            new MatcherReplace(),
-            new StringBuilderCodePoint(),
-    };
-
+        StringSource src = new SingleString();
+        StringDestination dst = new SimpleCount();
+        StripAlgorithm alg[] = new StripAlgorithm[] {
+                new StringReplaceAll(),
+                new MatcherReplace(),
+                new StringBuilderCodePoint(),
+        };
+    
 * Run tests for algorithms' correctness (checks that all outputs for
 all algorithms match):
 
-    assureCorrectness(10000, src, alg);
+        assureCorrectness(10000, src, alg);
 
 * Run tests to measure algorithms' speed:
 
-    benchmarkSpeed(1000000, src, dst, alg);
+        benchmarkSpeed(1000000, src, dst, alg);
+
+Sample testing procedure that test almost all algorithms is included
+in default `main()` implementation.
